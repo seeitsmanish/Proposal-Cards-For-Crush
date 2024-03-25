@@ -105,8 +105,8 @@ body {
 }
 
 .paper-6 {
-    height: 250px;
-    width: 400px;
+    height: 370px;
+    width: 350px;
     background-image: url('./public/images/5.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -161,5 +161,6 @@ body {
     left: 20px;
     pointer-events: none; /* Ensure the shadow doesn't interfere with mouse events */
 }
+
 
 

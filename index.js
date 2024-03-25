@@ -24,7 +24,6 @@ class Paper {
         
         
         document.addEventListener('mousemove', (e) => {
-            
             if(this.holdingPaper) {
                 this.velX = e.clientX - this.prevX;
                 this.velY = e.clientY - this.prevY;
@@ -44,30 +43,33 @@ class Paper {
 
         // for mobiles and ipads....
         paper.addEventListener('touchstart', function(e) {
-            this.holdingPaper = true;
+            e.preventDefault();
 
-            this.prevX = e.clientX;
-            this.prevY = e.clientY;
+            this.holdingPaper = true;
+            this.prevX = e.touches[0].clientX;
+            this.prevY = e.touches[0].clientY;
             paper.style.zIndex = topPaper;
             topPaper++;
-        });
+            console.log(e)
+        }.bind(this), {passive: false});
 
-        document.addEventListener('touchend', function(e) {
-            if(this.holdingPaper) {
-                this.velX = e.clientX - this.prevX;
-                this.velY = e.clientY - this.prevY;
+        document.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+            if (this.holdingPaper) {
+                this.velX = e.touches[0].clientX - this.prevX;
+                this.velY = e.touches[0].clientY - this.prevY;
                 this.currentX += this.velX;
                 this.currentY += this.velY;
-                console.log(this.currentX, this.currentY);
                 paper.style.transform = `translateX(${this.currentX}px) translateY(${this.currentY}px)`;
                 this.prevX += this.velX;
                 this.prevY += this.velY;
             }
-        });
-
-        window.addEventListener('touchmove', function(e) {
+        }.bind(this), {passive: false});
+        
+        window.addEventListener('touchend', function(e) {
+            e.preventDefault();
             this.holdingPaper = false;
-        });
+        }.bind(this), {passive: false});
 
     }
 }
@@ -102,3 +104,4 @@ function toggleSize(now) {
 }
 
 requestAnimationFrame(toggleSize)
+
