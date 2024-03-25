@@ -1,16 +1,147 @@
-.paper {
-    padding: 100px 100px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     background-color: black;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('./public/images/background.jpg');
+    background-size: contain;
 }
 
 .paper {
-    border: 5px solid white;
     position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid black;
 }
+
+.cute-heart-container {
+    height: 100px;
+    width: 100px;
+}
+
+.cute-heart-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.pin-container {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 10px;
+}
+
+.pin-container img {
+    max-width: 100%;
+    max-width: 100%;
+
+}
+
+.image-container {
+    width: 200px;
+    margin: 15px 40px 15px 15px;
+    box-shadow: 0.9rem 0.9rem rgb(234, 225, 225);
+    transform: rotate(-2deg);
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    border: 1px solid black;
+}
+
+.icons{
+    margin: 40px 20px 2px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-side{
+    display: flex;
+    gap: 13px;
+    justify-content: center;
+    align-items: center;
+}
+
+.likes {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 18px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+.special-lines-for-sajna {
+    width: 180px;
+    margin: 30px auto;
+}
+
+.special-lines-for-sajna p {
+    width: 100%;
+    word-wrap: normal;
+    text-align: center;
+    font-family: "kalam", cursive;
+    font-weight: 700;
+}
+
+.paper-1,.paper-3, .paper-5, .paper-6, .paper-0 {
+    transform: rotate(-5deg);
+}
+
+.paper-2,.paper-4 {
+    transform: rotate(2deg);
+}
+
+.paper-6 {
+    height: 250px;
+    width: 400px;
+    background-image: url('./public/images/5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "kalam", cursive;
+
+}
+
+.paper-0{
+    padding: 10px;
+    height: 200px;
+    width: 240px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "kalam", cursive;
+    text-align: center;
+
+}
+
+#title-info {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.drag-info, #final-message p {
+    color: #ff3b49;
+    font-size: 20px;
+}
+
+
+

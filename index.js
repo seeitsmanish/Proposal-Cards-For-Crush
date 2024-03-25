@@ -41,6 +41,34 @@ class Paper {
         window.addEventListener('mouseup', (e) => {
             this.holdingPaper = false;
         })
+
+        // for mobiles and ipads....
+        paper.addEventListener('touchstart', function(e) {
+            this.holdingPaper = true;
+
+            this.prevX = e.clientX;
+            this.prevY = e.clientY;
+            paper.style.zIndex = topPaper;
+            topPaper++;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            if(this.holdingPaper) {
+                this.velX = e.clientX - this.prevX;
+                this.velY = e.clientY - this.prevY;
+                this.currentX += this.velX;
+                this.currentY += this.velY;
+                console.log(this.currentX, this.currentY);
+                paper.style.transform = `translateX(${this.currentX}px) translateY(${this.currentY}px)`;
+                this.prevX += this.velX;
+                this.prevY += this.velY;
+            }
+        });
+
+        window.addEventListener('touchmove', function(e) {
+            this.holdingPaper = false;
+        });
+
     }
 }
 
