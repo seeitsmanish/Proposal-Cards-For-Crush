@@ -143,5 +143,23 @@ body {
     font-size: 20px;
 }
 
+#heart-container {
+    margin-top: 10px;
+    transition:  transform 0.5s ease-in-out;
+    
+}
+
+.heart-shadow {
+    width: 50px; /* Adjust to match heart width */
+    height: 50px; /* Adjust to match heart height */
+    background: transparent;
+    border-radius: 50%; /* Half of the heart's width/height */
+    box-shadow: 0px 0px 40px 15px #F94BA1; /* Adjust shadow properties as needed */
+    position: absolute;
+    z-index: -1;
+    top: 24px;
+    left: 20px;
+    pointer-events: none; /* Ensure the shadow doesn't interfere with mouse events */
+}
 
 

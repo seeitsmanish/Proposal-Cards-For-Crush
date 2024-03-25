@@ -77,3 +77,28 @@ Array.from(document.querySelectorAll('.paper')).forEach(paper => {
     const p = new Paper();
     p.init(paper);
 })
+
+
+
+let expanded = false;
+let last = 0;
+const heart = document.getElementById('heart-container');
+
+function toggleSize(now) {
+
+    if(now - last >= 500) {
+        if(expanded) {
+            heart.style.transform = 'scale(1)';
+        }
+        else {
+            heart.style.transform = 'scale(1.1)';
+        }
+    
+        expanded = !expanded;
+        last = now;
+    }
+
+    requestAnimationFrame(toggleSize);
+}
+
+requestAnimationFrame(toggleSize)
