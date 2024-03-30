@@ -16,11 +16,13 @@ body {
     background-size: contain;
 }
 
+
 .paper {
     position: absolute;
     background-color: white;
     border-radius: 5px;
     border: 1px solid black;
+    cursor: grab;
 }
 
 .cute-heart-container {
@@ -162,5 +164,6 @@ body {
     pointer-events: none; /* Ensure the shadow doesn't interfere with mouse events */
 }
 
-
-
+img {
+    pointer-events: none;
+}
